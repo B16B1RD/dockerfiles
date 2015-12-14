@@ -1,4 +1,5 @@
 FROM alpine:3.2
+MAINTAINER Akiyoshi Sakaguchi <a-sakaguchi@groovenauts.jp>
 
 ENV NGINX_VERSION 1.9.9
 
