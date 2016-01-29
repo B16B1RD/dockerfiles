@@ -7,7 +7,7 @@ RUN apk add --update --virtual build-dependencies build-base binutils-gold linux
   && curl -SLO "https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}.tar.gz" \
   && tar -xzf "node-v${NODE_VERSION}.tar.gz" \
   && cd "/node-v${NODE_VERSION}" \
-  && ./configure --prefix=/usr/local --fully-static \
+  && ./configure --prefix=/usr/local --fully-static --without-snapshot \
   && make -j$(grep -c ^processor /proc/cpuinfo 2>/dev/null || 1) \
   && make install \
   && paxctl -cm /usr/local/bin/node \
