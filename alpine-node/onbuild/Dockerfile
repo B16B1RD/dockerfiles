@@ -1,4 +1,4 @@
-FROM asakaguchi/node:5.2
+FROM asakaguchi/node:5.5
 MAINTAINER Akiyoshi Sakaguchi <a-sakaguchi@groovenauts.jp>
 
 ENV SRC /usr/local/src/app

@@ -3,5 +3,5 @@ This dockerfile is the Node.js in a container.
 
 ## Usage example
 ```
-docker build -t alpine-node:5.2 .
+docker build -t alpine-node:5.5 .
 ```

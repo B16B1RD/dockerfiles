@@ -1,7 +1,7 @@
 FROM alpine:3.3
 MAINTAINER Akiyoshi Sakaguchi <a-sakaguchi@groovenauts.jp>
 
-ENV NODE_VERSION 5.4.0
+ENV NODE_VERSION 5.5.0
 
 RUN apk add --update --virtual build-dependencies build-base binutils-gold linux-headers curl paxctl python \
   && curl -SLO "https://nodejs.org/dist/v${NODE_VERSION}/node-v${NODE_VERSION}.tar.gz" \
