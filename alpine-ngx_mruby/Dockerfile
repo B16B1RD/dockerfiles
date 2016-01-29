@@ -18,7 +18,7 @@ ENV NGINX_CONFIG_OPT_ENV --with-http_stub_status_module \
                          --error-log-path=/var/log/nginx/error.log
 
 RUN apk add --update openssl-dev pcre-dev git \
-  && apk add --virtual build-dependencies build-base ruby-dev tar wget bison perl \
+  && apk add --virtual build-dependencies build-base ruby-dev ruby-rake tar wget bison perl \
   && git clone https://github.com/matsumoto-r/ngx_mruby.git \
   && cd ngx_mruby \
   && sh build.sh \
