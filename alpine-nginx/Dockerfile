@@ -1,7 +1,7 @@
 FROM alpine:3.3
 MAINTAINER Akiyoshi Sakaguchi <a-sakaguchi@groovenauts.jp>
 
-ENV NGINX_VERSION 1.9.9
+ENV NGINX_VERSION 1.10.0
 
 RUN apk --update add pcre-dev openssl-dev \
   && apk add --virtual build-dependencies build-base curl \
