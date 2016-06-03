@@ -23,14 +23,13 @@ RUN apk add --update openssl-dev pcre-dev git \
   && cd ngx_mruby \
   && sh build.sh \
   && make install \
+  && ln -sf /dev/stdout /var/log/nginx/access.log \
+  && ln -sf /dev/stderr /var/log/nginx/error.log \
   && cd / \
   && apk del build-dependencies \
   && rm -rf \
        ngx_mruby \
        /var/cache/apk/*
-
-RUN ln -sf /dev/stdout /var/log/nginx/access.log
-RUN ln -sf /dev/stderr /var/log/nginx/error.log
 
 EXPOSE 80 443
 
