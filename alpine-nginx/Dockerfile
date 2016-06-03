@@ -1,5 +1,5 @@
 FROM alpine:3.4
-MAINTAINER Akiyoshi Sakaguchi <a-sakaguchi@groovenauts.jp>
+MAINTAINER Akiyoshi Sakaguchi <autumngoodluck@gmail.com>
 
 ENV NGINX_VERSION 1.11.1
 
