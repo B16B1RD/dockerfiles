@@ -1,7 +1,7 @@
 FROM ubuntu:xenial-20160525
 MAINTAINER Akiyoshi Sakaguchi <a-sakaguchi@groovenauts.jp>
 
-ENV ATOM_VERSION 1.4.1
+ENV ATOM_VERSION 1.7.4
 
 RUN DEBIAN_FRONTEND=noninteractive \
   sed -i.bak -e 's;http://archive.ubuntu.com/ubuntu/;http://ftp.jaist.ac.jp/pub/Linux/ubuntu/;' /etc/apt/sources.list \
