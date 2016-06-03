@@ -1,5 +1,5 @@
 FROM alpine:3.4
-MAINTAINER Akiyoshi Sakaguchi <a-sakaguchi@groovenauts.jp>
+MAINTAINER Akiyoshi Sakaguchi <autumngoodluck@gmail.com>
 
 ENV NODE_VERSION=6.2.0 \
     NPM_CONFIG_LOGLEVEL=info
