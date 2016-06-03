@@ -1,5 +1,5 @@
 FROM ubuntu:xenial-20160525
-MAINTAINER Akiyoshi Sakaguchi <a-sakaguchi@groovenauts.jp>
+MAINTAINER Akiyoshi Sakaguchi <autumngoodluck@gmail.com>
 
 ENV ATOM_VERSION 1.7.4
 
