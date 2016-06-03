@@ -1,4 +1,4 @@
-FROM ubuntu:trusty
+FROM ubuntu:xenial-20160525
 MAINTAINER Akiyoshi Sakaguchi <a-sakaguchi@groovenauts.jp>
 
 ENV ATOM_VERSION 1.4.1
