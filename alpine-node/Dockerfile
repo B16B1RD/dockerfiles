@@ -1,7 +1,7 @@
 FROM alpine:3.4
 MAINTAINER Akiyoshi Sakaguchi <autumngoodluck@gmail.com>
 
-ENV NODE_VERSION=6.2.0 \
+ENV NODE_VERSION=6.2.1 \
     NPM_CONFIG_LOGLEVEL=info
 
 RUN apk add --update --virtual build-dependencies build-base binutils-gold linux-headers curl paxctl python \
