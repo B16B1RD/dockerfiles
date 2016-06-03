@@ -19,10 +19,10 @@ RUN apk --update add pcre-dev openssl-dev \
        --error-log-path=/var/log/nginx/error.log \
   && make \
   && make install \
-  && cd / \
-  && apk del build-dependencies \
   && ln -sf /dev/stdout /var/log/nginx/access.log \
   && ln -sf /dev/stderr /var/log/nginx/error.log \
+  && cd / \
+  && apk del build-dependencies \
   && rm -rf \
        nginx-${NGINX_VERSION} \
        nginx-${NGINX_VERSION}.tar.gz \
