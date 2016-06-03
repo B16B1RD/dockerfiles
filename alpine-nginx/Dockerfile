@@ -1,4 +1,4 @@
-FROM alpine:3.3
+FROM alpine:3.4
 MAINTAINER Akiyoshi Sakaguchi <a-sakaguchi@groovenauts.jp>
 
 ENV NGINX_VERSION 1.10.0
