@@ -1,4 +1,4 @@
-FROM alpine:3.3
+FROM alpine:3.4
 MAINTAINER Akiyoshi Sakaguchi <a-sakaguchi@groovenauts.jp>
 
 ENV NODE_VERSION=6.2.0 \
