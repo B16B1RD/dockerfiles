@@ -67,7 +67,21 @@ docker run --rm -v $(pwd):/data asakaguchi/textlint --rule spellchecker /data/ba
 docker run --rm --entrypoint sh asakaguchi/textlint -c "cat /textlint/.textlintrc" > .textlintrc
 ```
 
-ダウンロードしたファイルを編集して、`-w /data` を指定します。
+ダウンロードしたファイルを編集します。以下は `ja-yahoo-kousei` ルールを追加した例です（"*****" はアプリケーション ID）。
+
+```
+{
+  "rules": {
+    "no-todo": true,
+    "preset-ja-technical-writing": true,
+    "ja-yahoo-kousei": {
+      "appID": "********************************************************"
+    }
+  }
+}
+```
+
+`-w /data` を指定して、文章をチェックします。
 
 ```
 docker run --rm -v $(pwd):/data -w /data asakaguchi/textlint foo.txt
