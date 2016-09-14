@@ -87,5 +87,11 @@ docker run --rm --entrypoint sh asakaguchi/textlint -c "cat /textlint/.textlintr
 docker run --rm -v $(pwd):/data -w /data asakaguchi/textlint foo.txt
 ```
 
+ファイルの変更を監視して、変更されたファイルの文章をチェックしたい場合は、[chokidar-cli](https://www.npmjs.com/package/chokidar-cli) を使って `textlint` を実行します。この例では、カレントディレクトリ配下のテキストファイル（`/data/**/*.txt`）とマークダウンファイル（`/data/**/*.md`）を監視対象としています。
+
+```
+docker run --rm -v $(pwd):/data --entrypoint chokidar asakaguchi/textlint '/data/**/*.md' '/data/**/*.txt' -c 'textlint {path}'
+```
+
 ## License
 This is licensed under the [MIT](https://github.com/asakaguchi/dockerfiles/blob/master/LICENSE) license.

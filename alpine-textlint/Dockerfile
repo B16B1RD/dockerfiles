@@ -2,10 +2,12 @@ FROM alpine:3.4
 
 MAINTAINER Akiyoshi Sakaguchi <autumngoodluck@gmail.com>
 
-ENV TEXTLINT_VERSION=7.1.1
+ENV TEXTLINT_VERSION=7.1.1 \
+    SHELL=/bin/sh
 RUN set -x \
     && apk add --update --no-cache build-base python nodejs \
-    && npm install -g textlint@${TEXTLINT_VERSION} \
+    && npm install -g chokidar-cli \
+                      textlint@${TEXTLINT_VERSION} \
                       textlint-rule-no-todo \
                       textlint-rule-preset-ja-technical-writing \
                       textlint-rule-ja-yahoo-kousei \
