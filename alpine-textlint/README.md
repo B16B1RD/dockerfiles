@@ -2,7 +2,7 @@
 
 この Dockerfile は、[textlint](https://github.com/textlint/textlint) の導入を簡単にする Docker イメージを作成するためのファイルです。作成する Docker イメージのベースイメージには、Alpine Linux を使用しています。
 
-この textlint Docker イメージで使用できるルールは以下のとおりです。
+textlint 自身は、文章をどのようにチェックするかのルールを持っていません。この Dockerfile では、以下の文章チェックルールをインストールしています。
 
 * [textlint\-rule\-no\-todo](https://github.com/azu/textlint-rule-no-todo)
 * [textlint\-rule\-preset\-ja\-technical\-writing](https://github.com/textlint-ja/textlint-rule-preset-ja-technical-writing)
@@ -10,7 +10,7 @@
 * [textlint\-rule\-spellchecker](https://github.com/nodaguti/textlint-rule-spellchecker)
 * [textlint\-rule\-spacing](https://github.com/textlint-ja/textlint-rule-spacing)
 
-デフォルトの textlint 設定ファイル（`.textlintrc`）では、`no-todo` ルールと `preset-ja-technical-writing` プリセットを有効にしています。
+このうち、`no-todo` ルールと `preset-ja-technical-writing` ルールをすぐ使えるようにしています。これは、`/textlint/.textlintrc` 設定ファイルで次のように定義しています。
 
 ```
 {
