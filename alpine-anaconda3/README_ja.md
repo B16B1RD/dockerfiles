@@ -1,4 +1,4 @@
-# alpine-anacona3 / Dockerfile
+# alpine-anaconda3 / Dockerfile
 
 この Dockerfile は、Alpine Linux 上に Anaconda3 で Python 環境を構築するためのファイルです。
 

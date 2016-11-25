@@ -1,6 +1,6 @@
-# alpine-anacona3 / Dockerfile
+# alpine-anaconda3 / Dockerfile
 
-This Dockerfile is a file for building a Python environment with Anaconda 3 on Alpine Linux.
+This Dockerfile is a file for building a Python environment with Anaconda3 on Alpine Linux.
 
 ## Requirements
 
