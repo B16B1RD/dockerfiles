@@ -22,6 +22,7 @@ RUN apk --update --no-cache add \
                                 libxext \
                                 libsm \
                                 libxrender \
+                                ncurses5-widec-libs \
     && cd /tmp \
     && wget -q -O "/etc/apk/keys/${GLIBC_KEY}" "${GLIBC_URL}/${GLIBC_VERSION}/${GLIBC_KEY}" \
     && wget "${GLIBC_URL}/${GLIBC_VERSION}/glibc-${GLIBC_VERSION}.apk" \
