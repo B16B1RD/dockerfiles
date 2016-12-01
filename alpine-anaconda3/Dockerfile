@@ -37,7 +37,7 @@ RUN set -x \
     && wget https://www.imagemagick.org/download/ImageMagick.tar.gz \
     && tar xvzf ImageMagick.tar.gz \
     && cd ImageMagick* \
-    && ./configure && make && make install && ldconfig /usr/local/lib && cd /tmp \
+    && ./configure LDFLAGS="-static" && make && make install && ldconfig /usr/local/lib && cd /tmp \
     && wget -q -O "/etc/apk/keys/${GLIBC_KEY}" "${GLIBC_URL}/${GLIBC_VERSION}/${GLIBC_KEY}" \
     && wget "${GLIBC_URL}/${GLIBC_VERSION}/glibc-${GLIBC_VERSION}.apk" \
     && wget "${GLIBC_URL}/${GLIBC_VERSION}/glibc-bin-${GLIBC_VERSION}.apk" \
