@@ -15,15 +15,29 @@ ENV LOCALE=ja_JP \
 ENV LC_ALL="${LOCALE}.${ENCODING}" \
     LANG="${LOCALE}.${ENCODING}"
 
-RUN apk --update --no-cache add \
-                                bash \
-                                openssl \
-                                tini \
-                                libxext \
-                                libsm \
-                                libxrender \
-                                ncurses5-widec-libs \
+RUN set -x \ 
+    && apk --update --no-cache add bash \
+                                   openssl \
+                                   tini \
+                                   libxext \
+                                   libsm \
+                                   libxrender \
+                                   ncurses5-widec-libs \
+    && apk --no-cache --virtual build-dependencies add build-base \
+                                                       fontconfig-dev \
+                                                       freetype-dev \
+                                                       ghostscript-dev \
+                                                       libjpeg-turbo-dev \
+                                                       lcms2-dev \
+                                                       libltdl \
+                                                       libpng-dev \
+                                                       libwebp-dev \
+                                                       libx11-dev \
     && cd /tmp \
+    && wget https://www.imagemagick.org/download/ImageMagick.tar.gz \
+    && tar xvzf ImageMagick.tar.gz \
+    && cd ImageMagick* \
+    && ./configure && make && make install && ldconfig /usr/local/lib \
     && wget -q -O "/etc/apk/keys/${GLIBC_KEY}" "${GLIBC_URL}/${GLIBC_VERSION}/${GLIBC_KEY}" \
     && wget "${GLIBC_URL}/${GLIBC_VERSION}/glibc-${GLIBC_VERSION}.apk" \
     && wget "${GLIBC_URL}/${GLIBC_VERSION}/glibc-bin-${GLIBC_VERSION}.apk" \
@@ -39,6 +53,7 @@ RUN apk --update --no-cache add \
     && conda clean --yes --tarballs \
     && conda clean --yes --packages \
     && cd \
+    && apk del build-dependencies \
     && rm -rf /tmp/*
 
 # Workaround
