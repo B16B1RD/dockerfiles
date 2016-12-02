@@ -27,8 +27,8 @@ RUN set -x \
                                                        fontconfig-dev \
                                                        freetype-dev \
                                                        ghostscript-dev \
-                                                       libjpeg-turbo-dev \
                                                        lcms2-dev \
+                                                       libjpeg-turbo-dev \
                                                        libltdl \
                                                        libpng-dev \
                                                        libwebp-dev \
@@ -37,7 +37,7 @@ RUN set -x \
     && wget https://www.imagemagick.org/download/ImageMagick.tar.gz \
     && tar xvzf ImageMagick.tar.gz \
     && cd ImageMagick* \
-    && ./configure LDFLAGS="-static" && make && make install && ldconfig /usr/local/lib && cd /tmp \
+    && ./configure && make && make install && ldconfig /usr/local/lib && cd /tmp \
     && wget -q -O "/etc/apk/keys/${GLIBC_KEY}" "${GLIBC_URL}/${GLIBC_VERSION}/${GLIBC_KEY}" \
     && wget "${GLIBC_URL}/${GLIBC_VERSION}/glibc-${GLIBC_VERSION}.apk" \
     && wget "${GLIBC_URL}/${GLIBC_VERSION}/glibc-bin-${GLIBC_VERSION}.apk" \
@@ -54,6 +54,16 @@ RUN set -x \
     && conda clean --yes --packages \
     && cd \
     && apk del build-dependencies \
+    && apk --no-cache add fontconfig \
+                          freetype \
+                          ghostscript \
+                          lcms2 \
+                          libjpeg-turbo \
+                          libgomp \
+                          libltdl \
+                          libpng \
+                          libwebp \
+                          libx11 \
     && rm -rf /tmp/*
 
 # Workaround
