@@ -2,7 +2,7 @@ FROM alpine:3.4
 
 MAINTAINER Akiyoshi Sakaguchi <autumngoodluck@gmail.com>
 
-ENV TEXTLINT_VERSION=7.1.2 \
+ENV TEXTLINT_VERSION=7.2.1 \
     SHELL=/bin/sh
 RUN set -x \
     && apk add --update --no-cache build-base python nodejs \
