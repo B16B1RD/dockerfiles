@@ -1,6 +1,15 @@
 # alpine-anaconda3 / Dockerfile
 
-この Dockerfile は、Alpine Linux 上に Anaconda3 で Python 環境を構築するためのファイルです。
+この Dockerfile は、Alpine Linux 上に [Anaconda3](https://www.continuum.io/) を使って Python 環境を構築します。
+
+Jupyter Notebook での利用を前提とした作りになっています。また、IRuby も使えるようにしています。IRuby 関連では、以下のパッケージを同梱しています。
+
+* pry
+* pry-doc
+* awesome_print
+* gnuplot
+* rubyvis
+* nyaplot
 
 ## Requirements
 
@@ -8,41 +17,25 @@
 
 ## Usage
 
-Docker イメージを作るには、次のようにコマンドを実行します。
+Docker イメージを作るには、次のコマンドを使用します。
 
 ```text
 docker build -t my-anaconda3 .
 ```
 
-Docker イメージを実行するには、次のようにコマンドを実行します。
+以下のコマンドは、Jupyter Notebook の起動例です。
 
 ```text
-docker run -it my-anaconda3
+docker run -it --rm -v $(pwd):/opt/notebooks -p 8888:8888 my-anaconda3 jupyter notebook --notebook-dir=/opt/notebooks --ip="0.0.0.0" --port=8888 --no-browser
 ```
 
-## Tips
-
-macOS で、Matplotlib を使ったグラフ描画を行いたい場合は、XQuartz と socat を使います。
-
-XQuartz と socat のインストールは、次のようにコマンドを実行します。
+Jupyter Notebook が起動すると、以下のようなメッセージが表示されます。
 
 ```text
-brew install Caskroom/cask/xquartz
-brew install socat
+The Jupyter Notebook is running at: http://0.0.0.0:8888/?token=************************************************
 ```
 
-Docker イメージを実行する前に、次のようにコマンドを実行します。
-
-```text
-open -a Xquartz
-socat TCP-LISTEN:6000,reuseaddr,fork UNIX-CLIENT:\"$DISPLAY\"
-```
-
-Docker イメージを実行するには、環境変数 DISPLAY を指定して、次のようにコマンドを実行します。
-
-```text
-docker run --rm -it -e DISPLAY=$(ifconfig en0 | grep inet | awk '$1=="inet" {print $2}'):0 my-anaconda3
-```
+このメッセージで示された `http://0.0.0.0:8888/?token=************************************************` をウェブブラウザーでオープンします。
 
 ## License
 
