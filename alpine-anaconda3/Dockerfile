@@ -4,7 +4,7 @@ LABEL maintainer "autumngoodluck@gmail.com"
 
 ENV LOCALE=ja_JP \
     ENCODING=UTF-8 \
-    GLIBC_VERSION=2.23-r3 \
+    GLIBC_VERSION=2.25-r0 \
     GLIBC_URL=https://github.com/sgerrand/alpine-pkg-glibc/releases/download \
     GLIBC_KEY=sgerrand.rsa.pub \
     CONDA_VERSION=4.3.0 \
