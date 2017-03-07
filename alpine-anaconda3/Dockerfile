@@ -1,19 +1,19 @@
 FROM alpine:3.4
 
-MAINTAINER Akiyoshi Sakaguchi <autumngoodluck@gmail.com>
+LABEL maintainer "autumngoodluck@gmail.com"
 
 ENV LOCALE=ja_JP \
     ENCODING=UTF-8 \
     GLIBC_VERSION=2.23-r3 \
     GLIBC_URL=https://github.com/sgerrand/alpine-pkg-glibc/releases/download \
     GLIBC_KEY=sgerrand.rsa.pub \
-    CONDA_VERSION=4.2.0 \
+    CONDA_VERSION=4.3.0 \
     CONDA_INSTALLER_URL=https://repo.continuum.io/archive \
     PATH=/opt/conda/bin:$PATH
 ENV LC_ALL="${LOCALE}.${ENCODING}" \
     LANG="${LOCALE}.${ENCODING}"
 
-RUN set -x \ 
+RUN set -x \
     && apk --update --no-cache add \
                                    bash \
                                    openssl \
