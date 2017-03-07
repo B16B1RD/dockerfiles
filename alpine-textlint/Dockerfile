@@ -2,7 +2,7 @@ FROM alpine:3.5
 
 LABEL maintainer "autumngoodluck@gmail.com"
 
-ENV TEXTLINT_VERSION=7.2.1 \
+ENV TEXTLINT_VERSION=7.3.0 \
     SHELL=/bin/sh
 RUN set -x \
     && apk add --update --no-cache build-base python nodejs \
