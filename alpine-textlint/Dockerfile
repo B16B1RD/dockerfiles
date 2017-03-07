@@ -1,6 +1,6 @@
-FROM alpine:3.4
+FROM alpine:3.5
 
-MAINTAINER Akiyoshi Sakaguchi <autumngoodluck@gmail.com>
+LABEL maintainer "autumngoodluck@gmail.com"
 
 ENV TEXTLINT_VERSION=7.2.1 \
     SHELL=/bin/sh
