@@ -1,4 +1,4 @@
-FROM alpine:3.4
+FROM alpine:3.9
 LABEL maintainer Akiyoshi Sakaguchi <autumngoodluck@gmail.com>
 
 ENV NGINX_CONFIG_OPT_ENV --with-http_stub_status_module \
